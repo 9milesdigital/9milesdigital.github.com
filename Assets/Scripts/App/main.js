@@ -1,7 +1,13 @@
 require.config({ 
 	paths: {
-		jquery: '../Utils/jquery'
+		jquery: '../utils/jquery',
+		tpl: '../plugins/tpl'
 	}
 });
 
-require(['module']);
+require(['comcom'], function(comcom){
+	
+	// Call comcom and pass in your username
+	comcom.init('sirbrad')
+	
+});

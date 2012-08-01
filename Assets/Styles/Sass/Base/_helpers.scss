@@ -25,10 +25,10 @@
 
 .media .img {
 	float:left;
-	margin-right:10px;
+	margin-right:1em;
 }
 
-.media .body {
+.media .bod {
 	overflow:hidden;
 	margin-bottom:0;
 }
@@ -75,7 +75,6 @@
    
 .contain {
     max-width: $site-max-width;
-    padding: 0 10px;
     margin: 0 auto;
 }
 

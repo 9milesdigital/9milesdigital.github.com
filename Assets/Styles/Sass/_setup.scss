@@ -1,16 +1,17 @@
 // Site set-up
 
 // Site Wide Colours
-$brand:#006199;
-$background-color:#ccc;
-$base-text-color:#6D6E71;
+$brand:#3d3c3c;
+$background-color:#fefefe;
+$base-text-color: $brand;
  
 $base-text-align: left; // switch for rtl
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size: 14px;
-$base-line-height: 1.4;
+//$base-font-family: "arvo",serif;
+$base-font-family: cambria,georgia,times,serif;
+$base-font-size: 16px;
+$base-line-height: 1.8;
 
-$site-max-width: 940px;
+$site-max-width: 800px;
 
 $space: 1em;
 
