@@ -169,18 +169,17 @@ p, blockquote, ul, ol, dl, menu, pre {
 /* Clearfix
    ========================================================================== */
 /* ClearFix - Ref: nicolasgallagher.com/micro-clearfix-hack/ */
-.cf, .site-nav {
+.cf {
   zoom: 1;
 }
 
-.cf:before, .site-nav:before,
-.cf:after,
-.site-nav:after {
+.cf:before,
+.cf:after {
   content: "";
   display: table;
 }
 
-.cf:after, .site-nav:after {
+.cf:after {
   clear: both;
 }
 
@@ -236,7 +235,7 @@ p, blockquote, ul, ol, dl, menu, pre {
 /* Contain
    ========================================================================== */
 .contain {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -583,9 +582,8 @@ p, blockquote, ul, ol, dl, menu, pre {
 /* Header
    ========================================================================== */
 .site-head {
-  position: fixed;
-  top: 5em;
-  max-width: 160px;
+  padding: 1em;
+  text-align: center;
 }
 
 .site-mark {
@@ -604,84 +602,10 @@ p, blockquote, ul, ol, dl, menu, pre {
   max-width: 60%;
 }
 
-.site-title {
-  font-weight: normal;
-  margin: 0;
-}
-
-.site-title a {
-  color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: letter-spacing 0.1s ease;
-  -moz-transition: letter-spacing 0.1s ease;
-  -ms-transition: letter-spacing 0.1s ease;
-  -o-transition: letter-spacing 0.1s ease;
-  transition: letter-spacing 0.1s ease;
-}
-.site-title a:hover, .site-title a:focus {
-  text-decoration: none;
-  letter-spacing: .1em;
-}
-
-.site-img {
-  margin: 0 1em;
-  width: 56px;
-}
-
-.site-nav {
-  clear: left;
-  margin-top: 1em;
-}
-
-.nav__item {
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  float: left;
-  font-size: 1.125em;
-  font-weight: bold;
-  padding: 1em 0;
-  position: relative;
-  text-align: center;
-  width: 50%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: background-color 0.1s ease;
-  -moz-transition: background-color 0.1s ease;
-  -ms-transition: background-color 0.1s ease;
-  -o-transition: background-color 0.1s ease;
-  transition: background-color 0.1s ease;
-}
-.nav__item + .nav__item {
-  border-left: 1px solid #eee;
-}
-.nav__item:hover, .nav__item:focus {
-  color: #ccc;
-}
-.nav__item.is-current {
-  text-decoration: underline;
-}
-.nav__item.is-current:before {
-  content: '';
-  background-color: #3d3c3c;
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  margin-left: -10px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 /* Body
    ========================================================================== */
 .site-body {
-  padding-top: 5em;
-  margin-left: 200px;
+  padding: 1em;
 }
 
 /* Footer
@@ -694,17 +618,20 @@ p, blockquote, ul, ol, dl, menu, pre {
 
 /* Article
    ========================================================================== */
-.island {
-  background-color: #fff;
-}
-
-.island {
-  padding: 1em;
+.post {
   word-wrap: break-word;
 }
 
-.post--listing .post__title {
-  margin: 0;
+.post__header {
+  margin-bottom: 1.4em;
+}
+
+.post__title {
+  margin-bottom: 0;
+}
+
+.post__header > p {
+  display: inline;
 }
 
 pre {
@@ -712,6 +639,9 @@ pre {
   padding: 1em;
   overflow: auto;
   word-wrap: normal;
+  -webkit-border-radius: 0.1em;
+  -moz-border-radius: 0.1em;
+  border-radius: 0.1em;
 }
 
 .post p:last-child {
@@ -719,7 +649,7 @@ pre {
 }
 
 code {
-  color: #e0bd44;
+  color: #96445B;
 }
 
 /*.post__date {
@@ -729,6 +659,11 @@ code {
 	padding-right: 1em;
 }
 */
+.post a:hover {
+  background: #3d3c3c;
+  color: #fff;
+}
+
 /* Comments
    ========================================================================== */
 .comments {
@@ -972,40 +907,24 @@ code {
 @media (min-width:768px) {
   /* 768px
   ========================================================================== */
-  .island {
-    padding: 4em;
+  .site-contain {
+    position: relative;
   }
 
-  .post--listing .post__title {
-    font-size: 2em;
+  .site-head {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+    position: fixed;
+    top: 5em;
+    max-width: 240px;
+    width: 20%;
+    text-align: left;
   }
 
-  .comment__item .img {
-    float: left;
-    margin: 0 1em 0 0;
-  }
-  .comment__item .img:before {
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #fff;
-    right: -1em;
-    bottom: 50%;
-    margin: 0 0 -10px;
-  }
-
-  .comment__item .bod {
-    padding: 2em;
-    overflow: hidden;
-  }
-
-  .comment__input {
-    margin-bottom: 1.6em;
-    padding: 2em;
-  }
-
-  .btn {
-    font-size: 1.25em;
-    padding: 1.5em 0;
+  .site-body {
+    padding: 5em 2em 2em 31.111%;
   }
 }
 @media (min-width:800px) {
