@@ -33,3 +33,15 @@
 	-moz-box-sizing:$box-sizing;
 	box-sizing:$box-sizing;
 }
+
+@mixin respond-to($content) {
+	@if $content == med {
+		@media only screen and (min-width: 40em) { @content; }
+	}
+	@if $content == lrg {
+		@media only screen and (min-width: 50em) { @content; }
+	}
+	@if $content == xlarg {
+		@media only screen and (min-width: 65em) { @content; }
+	}
+}

@@ -15,8 +15,7 @@ html {
     font-size: $base-font-size;
     line-height: $base-line-height;
     color: $base-text-color;
-    min-height: 100%;
-    overflow-y: scroll;
+    height: 100%;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
@@ -42,7 +41,6 @@ body {
    ========================================================================== */
 
 a {
-    color: $link-color;
     text-decoration: none;
 }
 
@@ -62,8 +60,7 @@ a:active {
 a:hover,
 a:focus,
 a:active {
-    color: $link-color-hover;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /*

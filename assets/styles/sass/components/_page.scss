@@ -1,0 +1,72 @@
+/* Page
+========================================================================== */
+
+.is-hidden {
+  position: absolute;
+  left: -999em;
+}
+
+@-webkit-keyframes load {
+  0%   { -webkit-transform: scale3d(3.125,3.125,3.125) translateY(1rem); opacity: 0;  }
+  30%  { -webkit-transform: scale3d( .90, .90, .90) translateY(  .2rem); opacity: 1}
+  45%  { -webkit-transform: scale3d(1, 1, 1) translateY( -.05rem);}
+  60%  { -webkit-transform: scale3d( .95, .95, .95) translateY(  .05rem);}
+}
+
+body {
+  background: rgb(254,254,254); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(254,254,254,1) 0%, rgba(226,226,219,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(254,254,254,1)), color-stop(100%,rgba(226,226,219,1))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(254,254,254,1) 0%,rgba(226,226,219,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  rgba(254,254,254,1) 0%,rgba(226,226,219,1) 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(254,254,254,1) 0%,rgba(226,226,219,1) 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  rgba(254,254,254,1) 0%,rgba(226,226,219,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e2e2db',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  text-align: center;
+  height: 100%;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    height: 100%; 
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+}
+
+
+.site-brand {
+  color: #EDEEEF;
+  display: inline-block;
+  font-family: 'icomoon';
+  font-size: 10em;
+  font-weight: normal;
+  line-height: 1;    
+  speak: none;
+  vertical-align: middle;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, .1), 0 -1px 0 rgba(255, 255, 255, .7);
+  -webkit-font-smoothing: antialiased;
+  -webkit-animation: load 1s .5s ease both;
+  @include transition((font-size 0.425s ease, color .235s ease));
+
+  &:hover,
+  &:focus {
+    color: #f2f2f2;
+  }
+
+  &:active {
+    color: #ddd;
+  }
+
+  @include respond-to(med) {
+    font-size: 20em;
+  }
+
+  @include respond-to(lrg) {
+    font-size: 30em;
+  }
+
+  @include respond-to(xlrg) {
+    font-size: 50em;
+  }
+}
